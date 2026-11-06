@@ -11,3 +11,4 @@ footer.innerHTML = `
     <p>&copy; ${new Date().getFullYear()}
     My Personal Portfolio. All Rights Reserved.</p>
 `;
+fgdfbf
