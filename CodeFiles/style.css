@@ -25,6 +25,23 @@ body {
     line-height: 1.6;
 }
 
+a { color: inherit; text-decoration: none; }
+.site-header {
+  width: min(var(--max-width), calc(100% - 64px));
+  min-height: 82px;
+  margin: 24px auto 0;
+  padding: 0 34px;
+  border: 1px solid #444;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: rgba(18,18,18,.94);
+  position: relative;
+  z-index: 5;
+}
+
 /* ==========================================
    2. HEADER & NAVIGATION
    ========================================== */
@@ -39,257 +56,6 @@ header {
     z-index: 1000;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
-}
-
-header h2 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* ==========================================
-   3. GENERAL SECTION STYLING
-   ========================================== */
-section {
-    padding: 80px 8%;
-    border-bottom: 1px solid var(--border-color);
-}
-
-section p:first-child {
-    color: var(--primary-color);
-    font-size: 0.85rem;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-}
-
-h2 strong {
-    color: var(--primary-color);
-}
-
-/* ==========================================
-   4. HOME SECTION
-   ========================================== */
-main > section:first-child {
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-}
-
-main > section:first-child h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin: 10px 0;
-}
-
-main > section:first-child a {
-    display: inline-block;
-    color: var(--text-muted);
-}
-
-/* Social Media Links */
-main > section:first-child div:nth-of-type(1) {
-    margin: 20px 0;
-    display: flex;
-    gap: 15px;
-}
-
-main > section:first-child div:nth-of-type(1) img {
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-main > section:first-child div:nth-of-type(1) img:hover {
-    transform: translateY(-5px);
-}
-
-/* Action Buttons (Contact / CV) */
-main > section:first-child div:nth-of-type(2) {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-main > section:first-child div:nth-of-type(2) a {
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-main > section:first-child div:nth-of-type(2) a:first-child {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-main > section:first-child div:nth-of-type(2) a:last-child {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-main > section:first-child div:nth-of-type(2) a:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-}
-
-/* Stats Counter Grid */
-main > section:first-child div:nth-of-type(3) {
-    display: flex;
-    gap: 40px;
-    background-color: var(--bg-card);
-    padding: 20px;
-    border-radius: 12px;
-    width: fit-content;
-}
-
-main > section:first-child div:nth-of-type(3) div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main > section:first-child div:nth-of-type(3) strong {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
-/* ==========================================
-   5. ABOUT & EDUCATION SECTION
-   ========================================== */
-ul {
-    list-style: none;
-    margin: 15px 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-    color: var(--text-muted);
-}
-
-h3, h4 {
-    margin: 20px 0 10px 0;
-    color: var(--text-main);
-}
-
-/* ==========================================
-   6. CARDS GRID LAYOUT (Skills, Projects, Exp)
-   ========================================== */
-article {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 25px;
-    margin-top: 20px;
-}
-
-/* Grid setup for multi-card sections */
-#Skills article, 
-section:nth-of-type(5) > div > div, 
-section:nth-of-type(6) > div > div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-/* Project Cards */
-section:nth-of-type(5) article {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-section:nth-of-type(5) article img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-section:nth-of-type(5) article div a {
-    display: inline-block;
-    margin-right: 15px;
-    margin-top: 15px;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ==========================================
-   7. CONTACT SECTION & FOOTER
-   ========================================== */
-section:last-of-type article div {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin: 20px 0;
-}
-
-section:last-of-type a {
-    color: var(--text-main);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-section:last-of-type a:hover {
-    color: var(--primary-color);
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #0b1120;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-/* ==========================================
-   8. MOBILE RESPONSIVE (Media Query)
-   ========================================== */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 50px 5%;
-    }
-
-    main > section:first-child h1 {
-        font-size: 2.2rem;
-    }
-
-    main > section:first-child div:nth-of-type(3) {
-        width: 100%;
-        justify-content: space-around;
-    }
+    border: 2px solid#444;
+    border-radius: 18px;
 }
