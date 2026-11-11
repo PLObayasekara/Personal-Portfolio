@@ -42,6 +42,14 @@ a { color: inherit; text-decoration: none; }
   z-index: 5;
 }
 
+section {
+    scroll-margin-top: 80px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* ==========================================
    2. HEADER & NAVIGATION
    ========================================== */
@@ -49,7 +57,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 8%;
+    padding: 20px 4%;
     background-color: rgba(15, 23, 42, 0.9);
     position: sticky;
     top: 0;
@@ -58,4 +66,567 @@ header {
     border-bottom: 1px solid var(--border-color);
     border: 2px solid#444;
     border-radius: 18px;
+}
+
+header h2{
+    color: #0073e6;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+}
+
+header nav ul li a{
+    color: #f8fafc;
+    text-decoration: none; /* Underline ඉවත් කිරීමට */
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover{
+    color: #0073e6;
+    background-color: rgba(0, 115, 230, 0.1);
+}
+
+/*For Mobile & Tablet responsive Display*/
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+}
+
+/* ==========================================
+   1. GLOBAL SECTION STYLING & BASE RESET
+   ========================================== */
+section {
+    padding: 80px 8%;
+    border-bottom: 1px solid #334155;
+}
+
+/* Section Sub-titles (Subtitle Tagline) */
+section > div > p:first-child,
+section > p:first-child {
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Section Headings */
+section h2 {
+    font-size: 2.2rem;
+    color: #f8fafc;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+section h2 strong {
+    color: #0073e6;
+}
+
+/* ==========================================
+   2. HOME SECTION (#home)
+   ========================================== */
+#home {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+#home > div:first-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#home > div:first-child > p:nth-of-type(1) {
+    color: #38bdf8;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#home > div:first-child > p:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+#home > div:first-child h1 {
+    font-size: 3rem;
+    color: #0073e6;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+#home > div:first-child > p:nth-of-type(3) {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+/* Social Media Icons */
+#home div:nth-of-type(1) > div:nth-of-type(1) {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(1) a img {
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    padding: 2px;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(1) a img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 115, 230, 0.4);
+}
+
+/* Action Buttons (Contact Me & Download CV) */
+#home div:nth-of-type(1) > div:nth-of-type(2) {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(2) a {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(2) a:first-child {
+    background-color: #0073e6;
+    color: #ffffff;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(2) a:first-child:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(2) a:last-child {
+    border: 2px solid #0073e6;
+    color: #0073e6;
+    background-color: transparent;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(2) a:last-child:hover {
+    background-color: rgba(0, 115, 230, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Stats Counter Box */
+#home div:nth-of-type(1) > div:nth-of-type(3) {
+    display: flex;
+    gap: 30px;
+    background-color: rgba(30, 41, 59, 0.7);
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    backdrop-filter: blur(5px);
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(3) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(3) strong {
+    font-size: 1.8rem;
+    color: #0073e6;
+    font-weight: 700;
+}
+
+#home div:nth-of-type(1) > div:nth-of-type(3) span {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+/* Profile Image Container */
+#home > div:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================
+   3. ABOUT SECTION (#About)
+   ========================================== */
+#About {
+    background-color: #0f172a;
+}
+
+#About p {
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+#About h3 {
+    color: #f8fafc;
+    font-size: 1.3rem;
+    margin: 25px 0 15px 0;
+    border-left: 4px solid #0073e6;
+    padding-left: 10px;
+}
+
+#About ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+#About ul li {
+    background-color: #1e293b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   4. EDUCATION SECTION (#Education)
+   ========================================== */
+#Education {
+    background-color: #0b1120;
+}
+
+#Education article {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#Education h3 {
+    color: #0073e6;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+#Education h4 {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+#Education ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#Education ul li {
+    color: #94a3b8;
+}
+
+/* ==========================================
+   5. SKILLS SECTION (#Skills)
+   ========================================== */
+#Skills {
+    background-color: #0f172a;
+}
+
+#Skills article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+#Skills article > div {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+#Skills article > div:hover {
+    transform: translateY(-5px);
+    border-color: #0073e6;
+}
+
+#Skills h3 {
+    color: #f8fafc;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+#Skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#Skills ul li {
+    color: #94a3b8;
+    padding: 6px 0;
+    border-bottom: 1px dashed #334155;
+}
+
+#Skills ul li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   6. PROJECTS SECTION (#Projects)
+   ========================================== */
+#Projects {
+    background-color: #0b1120;
+}
+
+#Projects > div > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+#Projects article {
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+#Projects article:hover {
+    transform: translateY(-5px);
+}
+
+#Projects article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+#Projects article > div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+#Projects h3 {
+    color: #f8fafc;
+    font-size: 1.25rem;
+}
+
+#Projects p {
+    color: #94a3b8;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+#Projects p strong {
+    color: #e2e8f0;
+}
+
+#Projects article div > div {
+    margin-top: auto;
+    padding-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+#Projects article a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+#Projects article a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   7. EXPERIENCE & ACTIVITIES SECTION
+   ========================================== */
+section[id="Experience&Activities"] {
+    background-color: #0f172a;
+}
+
+section[id="Experience&Activities"] > div > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+section[id="Experience&Activities"] article {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #334155;
+    border-left: 4px solid #0073e6;
+}
+
+section[id="Experience&Activities"] h3 {
+    color: #f8fafc;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+section[id="Experience&Activities"] article > p:nth-of-type(1) {
+    color: #38bdf8;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+section[id="Experience&Activities"] article > p:nth-of-type(2) {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   8. CONTACT & LINKS SECTION (#Contact)
+   ========================================== */
+#Contact {
+    background-color: #0b1120;
+}
+
+#Contact article {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid #334155;
+    max-width: 700px;
+}
+
+#Contact article > p {
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+#Contact article > div:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#Contact article a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    transition: color 0.3s ease;
+}
+
+#Contact article a:hover {
+    color: #0073e6;
+}
+
+/* Download CV Button styling */
+#Contact article > div:nth-of-type(2) a {
+    display: inline-block;
+    background-color: #0073e6;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#Contact article > div:nth-of-type(2) a:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   9. MOBILE RESPONSIVENESS (Media Query)
+   ========================================== */
+@media (max-width: 850px) {
+    section {
+        padding: 50px 5%;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    #home > div:first-child {
+        align-items: center;
+    }
+
+    #home > div:first-child h1 {
+        font-size: 2.3rem;
+    }
+
+    #home div:nth-of-type(1) > div:nth-of-type(3) {
+        width: 100%;
+        justify-content: space-around;
+        gap: 15px;
+    }
+
+    #Contact article {
+        padding: 20px;
+    }
 }
