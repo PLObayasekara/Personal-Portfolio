@@ -43,13 +43,33 @@ a { color: inherit; text-decoration: none; }
 }
 
 section {
-    scroll-margin-top: 70px; /* Header එකේ height එකට සමාන අගයක් මෙතැනට දෙන්න */
-    min-height: calc(100vh - 70px); /* Section එකක් screen එක පුරා පිරී පවතින සේ සකස් කිරීමට (Optional) */
+    scroll-margin-top: 70px;
+    min-height: calc(100vh - 70px);
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+/*For Mobile & Tablet responsive Display*/
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
 }
 
 /* ==========================================
@@ -87,7 +107,7 @@ header nav ul{
 
 header nav ul li a{
     color: #f8fafc;
-    text-decoration: none; /* Underline ඉවත් කිරීමට */
+    text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
     padding: 6px 12px;
@@ -102,26 +122,6 @@ header nav ul li a{
 header nav ul li a:hover{
     color: red;
     background-color: rgba(0, 115, 230, 0.1);
-}
-
-/*For Mobile & Tablet responsive Display*/
-@media (max-width: 850px) {
-    header {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px 5%;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    header nav ul li a {
-        font-size: 0.85rem;
-        padding: 4px 8px;
-    }
 }
 
 /* ==========================================
@@ -226,7 +226,7 @@ section h2 strong {
 /* Action Buttons (Contact Me & Download CV) */
 #home div:nth-of-type(1) > div:nth-of-type(2) {
     display: flex;
-    gap: 15px;
+    gap: 35px;
     margin-bottom: 35px;
 }
 
@@ -297,7 +297,35 @@ section h2 strong {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+}
+
+.profile {
+    min-height: 490px; 
+    display: grid; 
+    place-items: center; 
+    position: relative; 
+}
+
+.profile-portrait {
+    width: min(450px, 100%); aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle, #1e293b 0 55%, #1e293b 50% 70%, transparent 70%);
+    position: absolute;
+}
+
+.portrait-placeholder {
+    width: min(450px, 78%); aspect-ratio: 3 / 4; position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #aaa; text-align: center;
+}
+
+.profile-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Optional: removes hard square edges if the image isn't pre-cropped */
+    z-index: 2;
 }
 
 /* ==========================================
